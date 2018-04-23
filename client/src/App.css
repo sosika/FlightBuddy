@@ -1,4 +1,11 @@
-.App {
+.content {
+  min-height: calc(100vh - 70px);
+}
+.footer {
+  height: 40px;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -26,3 +33,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+ */
