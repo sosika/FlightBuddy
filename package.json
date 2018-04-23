@@ -11,7 +11,7 @@
     "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn && cd client && yarn",
-    "homepage": "https://flight-buddy.herokuapp.com/ "
+    "homepage": "https://flight-buddy.herokuapp.com/"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "mongoose": "^5.0.11"
+    "mongoose": "^5.0.11",
+    "react-materialize": "^2.2.0"
   }
 }
