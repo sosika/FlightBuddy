@@ -31,8 +31,9 @@ const App = () => (
         {/* <Route exact path="/" component={LandingPage} /> */}
         {/* <Route exact path="/charts" component={Charts} />
         <Route exact path="/charts/:id" component={Specific-Flight-Detail} />
-        <Route component={NoMatch} /> */}
+      <Route component={NoMatch} /> */}
       </Switch>
+      <h2>Welcome to FlightBuddy</h2>
     </div>
   </Router>
   </div>

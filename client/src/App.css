@@ -1,9 +1,14 @@
+body {
+  background-color: dimgray;
+}
+
 .content {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 90px);
 }
 .footer {
   height: 40px;
 }
+
 
 /* .App {
   text-align: center;
