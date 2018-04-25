@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-
 // import Login from "./pages/LandingPage";
 
 // class App extends Component {
