@@ -15,7 +15,10 @@ app.use(express.static("client/build"));
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flightbuddydb");
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flightbuddydb"), {
+  useMongoClient: true
+};
 
 // Start the API server
 app.listen(PORT, function() {
