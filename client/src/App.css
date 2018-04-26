@@ -1,9 +1,18 @@
+body {
+  background-color: #010203;
+}
+
 .content {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 90px);
 }
 .footer {
   height: 40px;
 }
+
+.modal {
+  margin-left: 100px;
+}
+
 
 /* .App {
   text-align: center;

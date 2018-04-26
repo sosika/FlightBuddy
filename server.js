@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
+// const MONGODB_URI = "./config/mongo_uri"
 
 // Configure body parser for AJAX requests
 
@@ -18,7 +19,6 @@ app.use(bodyParser.json());
 app.use(function(req, res, next) {
   console.log("things again")
   console.log("What is our path", req.url)
-
   next();
 });
 // Add routes, both API and view
