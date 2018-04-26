@@ -3,11 +3,12 @@ import "./Footer.css";
 
 
 const Footer = () => (
-        <footer class="page-footer grey">
+
+        <footer className="page-footer blue-grey">
             <div className="wrapper">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Footer Content</h5>
+                <div className="row">
+                    <div className="col l6 s12">
+                        <h5 className="white-text">Footer Content</h5>
                     </div>
                     {/* <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Links</h5>
