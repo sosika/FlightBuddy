@@ -1,5 +1,5 @@
 body {
-  background-color: dimgray;
+  background-color: #010203;
 }
 
 .content {
@@ -7,6 +7,10 @@ body {
 }
 .footer {
   height: 40px;
+}
+
+.modal {
+  margin-left: 100px;
 }
 
 
