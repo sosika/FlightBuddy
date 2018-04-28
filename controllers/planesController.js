@@ -10,9 +10,25 @@ module.exports = {
   //     .catch(err => res.status(422).json(err));
   // },
   findByTail: function(req, res) {
-    console.log("If we made it here... YAY")
+    console.log("different", req.params.id)
     db.Plane
-      .find({ tail: '15121' })
+      .find()
+      .where('tail').equals(req.params.id)
+
+        // .findOne({})
+        // .where({tail: req.params.id})
+        .then(dbModel => {
+          console.log("what is dbModel", dbModel);
+          res.json(dbModel);
+        });
+        // .catch(err => res.status(422).json(err));
+        //  function(err, dbModel){
+        //   if (!err) {
+        //     onsole.log(dbModel);
+        //   } else {throw err;}
+        // });
+      // .find({ tail: "req.params.id" })
+      // .where({'tail': '15121' })
       // .or([
       //       {
       //       "metric_source": "AAA Usage"
@@ -20,11 +36,11 @@ module.exports = {
       //       "metric_source": "Sandvine"
       //     }
       //   ])
-      .then(dbModel => console.log("What is dbModel", dbModel))
+      // .then(dbModel => console.log("What is dbModel", dbModel))
       // .then(dbModel => res.json(dbModel))
 
       // .catch(err => res.status(422).json(err));
-  },
+  }
   // create: function(req, res) {
   //   db.Plane
   //     .create(req.body)

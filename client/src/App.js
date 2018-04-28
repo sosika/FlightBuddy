@@ -1,15 +1,16 @@
-import React from 'react'
 import { Button, Icon, Modal } from 'react-materialize'
 import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import Tail from "./containers/tail";
+
 
 class App extends Component {
 
-  componentWillMount = () => {
-    fetch("/api/planes/3").then((data) => {
+  componentWillMount() {
+    fetch("/api/planes/15121").then((data) => {
       console.log("data", data)
     })
   }
@@ -21,7 +22,7 @@ class App extends Component {
           <div>
             <Nav />
             <Switch>
-              {/* <Route exact path="/" component={LandingPage} /> */}
+              <Route exact path="/tail" component={Tail} />
               {/* <Route exact path="/charts" component={Charts} />
               <Route exact path="/charts/:id" component={Specific-Flight-Detail} />
             <Route component={NoMatch} /> */}
