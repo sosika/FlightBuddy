@@ -9,9 +9,9 @@ const planesController = require("../../controllers/planesController");
 
 // router.get("/:id", () => console.log("Things"));
 // Matches with "/api/planes/:id"
-router
-  .route("/:id")
-  .get(planesController.findByTail)
+router.get("/:id", planesController.findByTail)
+  // .route("/:id")
+  // .get(planesController.findByTail)
   // .put(planesController.update)
   // .delete(planesController.remove);
 
