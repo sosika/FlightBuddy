@@ -1,26 +1,52 @@
 import React, { Component } from "react";
+import Form from "../components/Form/form";
 import TailView from "../components/TailView/tailview";
+import API from "../API.js";
 import axios from "axios";
 
-class Tail extends Component {
+export default class Tail extends Component {
   state = {
-    tail: {}
+    plane: {},
+    result: null
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  getPlanes = () => {
+    API.getPlanes({
+      plane: this.state.plane,
+    })
+      .then(res => this.setState({
+          plaes: res.data,
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.getPlanes();
+  };
+
+// Do we need this?
   componentDidMount() {
-    axios.get("/api/tail")
-    .then( (data) => (
-      this.setState({data})
-    ))
+    axios.get("/api/planes")
+    .then( (data) => this.setState({data}))
   };
 
   render() {
-    const {tail} = this.state;
-    if ( Object.keys(tail).length === 0 ) {
-      return <div>Loading...</div>
-    };
-    return<TailView planes={tail} />
+    return (
+        <div>
+          <Form
+            handleInputChange={this.handleInputChange}
+            handleFormSubmit={this.handleFormSubmit}
+          />
+        </div>
+    )
   }
 };
-
-export default Tail;
