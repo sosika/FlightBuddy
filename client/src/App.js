@@ -9,11 +9,11 @@ import Tail from "./containers/tail";
 
 class App extends Component {
 
-  componentWillMount() {
-    fetch("/api/planes/15121").then((data) => {
-      console.log("data", data)
-    })
-  }
+  // componentWillMount() {
+  //   fetch("/api/planes/15121").then((data) => {
+  //     console.log("data", data)
+  //   })
+  // }
 
   render() {
     return (

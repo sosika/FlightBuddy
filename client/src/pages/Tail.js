@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TailView from "../components/TailView/tailview";
+import TailView from "../components/TailView/TailView";
 import axios from "axios";
 
 class Tail extends Component {
@@ -8,18 +8,18 @@ class Tail extends Component {
   };
 
   componentDidMount() {
-    axios.get("/api/tail")
-    .then( (data) => (
-      this.setState({data})
+    axios.get("/api/planes")
+    .then( (response) => (
+      this.setState({tail: response.data})
     ))
   };
 
   render() {
     const {tail} = this.state;
     if ( Object.keys(tail).length === 0 ) {
-      return <div>Loading...</div>
+      return <div>LOADING...</div>
     };
-    return<TailView planes={tail} />
+    return<TailView planes={this.state.tail} />
   }
 };
 

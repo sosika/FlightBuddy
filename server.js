@@ -1,12 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes/planes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const planesController = require("./controllers/planesController")
 // const Plane = require('./models/plane');
-
 // const http = require('http'),
 //  httpProxy = require('http-proxy');
 // //
@@ -29,18 +28,24 @@ const PORT = process.env.PORT || 3001;
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flightbuddydb");
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets
 // app.use(express.static("client/build"));
-app.use(function(req, res, next) {
-  console.log("things again")
-  console.log("What is our path", req.url)
-  next();
-});
+// app.use(express.static("public"));
+
+app.get("/api/planes", planesController.findAll)
+
+app.get("/api/planes/test", planesController.findAll)
+
+
+// app.use(function(req, res, next) {
+//   console.log("things again")
+//   console.log("What is our path", req.url)
+//   next();
+// });
 // Add routes, both API and view
-app.use("/", routes);
+// app.use("/", routes);
 
 // Start the API server
 app.listen(PORT, function() {
