@@ -7,21 +7,6 @@ const PORT = process.env.PORT || 3001;
 
 // const Plane = require('./models/plane');
 
-// const http = require('http'),
-//  httpProxy = require('http-proxy');
-// //
-// // Create your proxy server and set the target in the options.
-// //
-// httpProxy.createProxyServer({target:'http://127.0.0.1:3001'}).listen(8000); // See (†)
-//
-// //
-// // Create your target server
-// //
-// http.createServer(function (req, res) {
-//   res.writeHead(200, { 'Content-Type': 'text/plain' });
-//   res.write('request successfully proxied!' + '\n' + JSON.stringify(req.headers, true, 2));
-//   res.end();
-// }).listen(8000);
 // const MONGODB_URI = "./config/mongo_uri"
 
 // Configure body parser for AJAX requests
