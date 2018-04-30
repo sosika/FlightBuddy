@@ -13,14 +13,14 @@ import About from "./components/About"
 class App extends Component {
 
   state = {
-    authenticated: false
+    authenticated: true
   }
 // Do we need this here?
-  componentWilllMount() {
-    fetch("/api/planes/15121").then((data) => {
-      console.log("data", data)
-    })
-  }
+  // componentWilllMount() {
+  //   fetch("/api/planes/15121").then((data) => {
+  //     console.log("data", data)
+  //   })
+  // }
   authenticate = (history) => {
     console.log("inside authentication method in App.js", this)
     //this.setState({authenticated: true})
@@ -52,7 +52,8 @@ class App extends Component {
               <Route exact path="/about" component={About} />
 
         <div>
-          <h4>Welcome to FlightBuddy</h4>
+          <h4>Welcome to FlightBuddy</h4>œ
+
           <Modal
             header='Login:'
             trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>

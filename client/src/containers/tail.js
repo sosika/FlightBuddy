@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Form from "../components/Form/form";
 import TailView from "../components/TailView";
 import API from "../API.js";
-import axios from "axios";
+// import axios from "axios";
 
 export default class Tail extends Component {
   state = {
-    plane: {},
-    result: null
+    plane: "",
+    metrics: [{}]
   };
 
   handleInputChange = event => {
@@ -17,7 +17,7 @@ export default class Tail extends Component {
     });
   };
 
-  grabAllPlanes = () => {
+  grabAllPlanes = () => { 
     API.grabAllPlanes({
       plane: this.state.plane
     })
@@ -27,7 +27,8 @@ export default class Tail extends Component {
     )
     .catch(err => console.log("this is an error coming back: ", err))
   }
-
+  // grabAllPlanes function working
+  
   // getPlanes = () => {
   //   API.getPlanes({
   //     plane: this.state.plane,
@@ -39,16 +40,30 @@ export default class Tail extends Component {
   //     .catch(err => console.log("this is an error coming back: ", err));
   // };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    this.getPlanes();
+  getMetrics = () => {
+    API.getPlanes(this.state.plane)
+      .then(res => {
+        console.log('res',res)
+        this.setState({
+          metrics: res.data
+        })
+        console.log('metrics', this.state.metrics)
+      }
+      )
+      .catch(err => console.log(err));
   };
 
-// Do we need this?
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.getMetrics();
+  };
+
+// Do we need this? --keep this for now
   componentDidMount() {
     axios.get("/api/planes")
     .then( (res) => this.setState({plane: res.data}))
   };
+
 
   render() {
     return (
@@ -60,7 +75,9 @@ export default class Tail extends Component {
           <Form
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
+            plane={this.state.plane}
           />
+          <TailView metrics={this.state.metrics} />
         </div>
     )
   }

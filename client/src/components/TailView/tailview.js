@@ -2,17 +2,16 @@
 import React from 'react';
 // import Plot from 'react-plotly.js';
 
-const TailView = (props) => {
-  console.log(props.planes)
-  // const tailTime = tail.event_start_datetime;
-  // const tailMetric = tail.metric;
-  return (
-    <div>
-      PRINT THIS SHIT
-      <p>Inside Tailview comp</p>
-      <h3>graph goes where</h3>
-      console.log(tailTime)
-      console.log(tailMetric)
+// const TailView = (props) => {
+//   console.log(props.planes)
+//   // const tailTime = tail.event_start_datetime;
+//   // const tailMetric = tail.metric;
+//   return (
+//     <div>
+//       PRINT THIS PLEASE!
+//       <p>Inside Tailview comp</p>
+//       <h3>graph goes here</h3>
+
     </div>
     // <Fragment>
       // <Plot
@@ -32,4 +31,43 @@ const TailView = (props) => {
   )
 };
 
+const TailView = ({metrics}) => (
+  <ul>
+    {metrics.map(metric => (
+      <li key={metric} className="list-group-item">
+          tail is: {metric.tail} ;
+          time is: {metric.event_start_datetime}
+      </li>
+    ))}
+  </ul>
+);
+
+
 export default TailView;
+
+
+
+// const TailView = ({metrics}) => (
+//   <ul>
+//     metrics.map(metric => (
+//       <div>
+//         {(() => {
+//           switch(metric.metric_source){
+//             case "Logs": return(
+//                 <LogsView log = {metric}  key={metric.id}/>
+//               );
+//               break;
+//             case "Sandvine": return(
+//                 <SandvineView sandvine = {metric} key={metric.id}/>
+//               );
+//               break;
+//             case "AAA Usage": return(
+//                 <AAAView aaa = {metric} key={metric.id}/>
+//               );
+//               break;
+//           }
+//         })()}
+//       </div>
+//     ))
+//   </ul>
+// );

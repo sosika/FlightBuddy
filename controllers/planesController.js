@@ -15,11 +15,12 @@ module.exports = {
     db.Plane
       .find()
       .where('tail').equals(req.params.id)
+      .sort({ event_start_datetime: 1 })
 
         // .findOne({})
         // .where({tail: req.params.id})
         .then(dbModel => {
-          console.log("what is dbModel", dbModel);
+          // console.log("what is dbModel", dbModel);
           res.json(dbModel);
         });
         // .catch(err => res.status(422).json(err));
