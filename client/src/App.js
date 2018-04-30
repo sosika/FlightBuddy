@@ -12,14 +12,14 @@ import Authenticate from './button';
 class App extends Component {
 
   state = {
-    authenticated: false
+    authenticated: true
   }
 // Do we need this here?
-  componentWilllMount() {
-    fetch("/api/planes/15121").then((data) => {
-      console.log("data", data)
-    })
-  }
+  // componentWilllMount() {
+  //   fetch("/api/planes/15121").then((data) => {
+  //     console.log("data", data)
+  //   })
+  // }
   authenticate = (history) => {
     console.log(this)
     //this.setState({authenticated: true})
@@ -45,7 +45,8 @@ class App extends Component {
         <div>
         <Router>
         <div>
-          <h4>Welcome to FlightBuddy</h4>
+          <h4>Welcome to FlightBuddy</h4>œ
+
           <Modal
             header='Login:'
             trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>

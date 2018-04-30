@@ -10,6 +10,7 @@ const Form = props => (
         className="form-control"
         id="tail"
         type="text"
+        value={props.plane}
         placeholder="Type tail to search"
         name="plane"
         onChange={props.handleInputChange}
