@@ -12,7 +12,6 @@ import React from 'react';
 //       <p>Inside Tailview comp</p>
 //       <h3>graph goes here</h3>
 
-    </div>
     // <Fragment>
       // <Plot
       //   data={[
@@ -28,8 +27,8 @@ import React from 'react';
       //   layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
       // />
     // </Fragment>
-  )
-};
+//   )
+// };
 
 const TailView = ({metrics}) => (
   <ul>
