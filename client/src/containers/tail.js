@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Form from "../components/Form/form";
 import TailView from "../components/TailView";
 import API from "../API.js";
-// import axios from "axios";
+import axios from "axios";
 
 export default class Tail extends Component {
   state = {
@@ -11,9 +11,9 @@ export default class Tail extends Component {
   };
 
   handleInputChange = event => {
-    const { name, value } = event.target;
+    const { value } = event.target;
     this.setState({
-      [name]: value
+      plane: value
     });
   };
 
@@ -69,7 +69,7 @@ export default class Tail extends Component {
     return (
         <div>
           <div>
-          <TailView planes={this.state.plane}/>
+          <TailView planes={this.state.plane} metrics={this.state.metrics}/>
           </div>
           <br></br>
           <Form
@@ -77,7 +77,6 @@ export default class Tail extends Component {
             handleFormSubmit={this.handleFormSubmit}
             plane={this.state.plane}
           />
-          <TailView metrics={this.state.metrics} />
         </div>
     )
   }

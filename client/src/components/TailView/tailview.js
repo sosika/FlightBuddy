@@ -2,6 +2,21 @@
 import React from 'react';
 // import Plot from 'react-plotly.js';
 
+const TailView = ({metrics}) => {
+  return(
+  <ul>
+    {metrics.map(metric => (
+      <li key={metric} className="list-group-item">
+        tail is: {metric.tail} ;
+          time is: {metric.event_start_datetime}
+      </li>
+    ))}
+  </ul>
+)};
+
+
+export default TailView;
+
 // const TailView = (props) => {
 //   console.log(props.planes)
 //   // const tailTime = tail.event_start_datetime;
@@ -30,19 +45,7 @@ import React from 'react';
 //   )
 // };
 
-const TailView = ({metrics}) => (
-  <ul>
-    {metrics.map(metric => (
-      <li key={metric} className="list-group-item">
-          tail is: {metric.tail} ;
-          time is: {metric.event_start_datetime}
-      </li>
-    ))}
-  </ul>
-);
 
-
-export default TailView;
 
 
 

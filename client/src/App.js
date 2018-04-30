@@ -34,8 +34,9 @@ class App extends Component {
         <div>
           <Router>
             <Switch>
-              {/* <Route exact path="/tail" component={Tail} /> */}
-              {/* <Route exact path="/view" component={TailView} /> */}
+              <Route exact path="/tail" component={Tail} />
+              <Route exact path="/view" component={TailView} />
+              <Route exact path="/about" component={About} />
             </Switch>
           </Router>
         </div>
@@ -50,7 +51,6 @@ class App extends Component {
               <Route exact path="/tail" component={Tail} />
               <Route exact path="/view" component={TailView} />
               <Route exact path="/about" component={About} />
-
         <div>
           <h4>Welcome to FlightBuddy</h4>œ
 

@@ -11,7 +11,7 @@ const Form = props => (
         id="tail"
         type="text"
         placeholder="Type a tail-number to search:"
-        value={props.plane}
+        // value={{}}
         name="plane"
         onChange={props.handleInputChange}
         required
