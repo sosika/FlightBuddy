@@ -1,5 +1,6 @@
 body {
-  background-color: #010203;
+  /* background-color: #010203; */
+  background-color: #fff;
 }
 
 .content {
@@ -13,9 +14,9 @@ body {
   margin-left: 100px;
 }
 
-h4 {
+/* h4 {
   color: white;
-}
+} */
 
 
 /* .App {

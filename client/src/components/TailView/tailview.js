@@ -2,12 +2,15 @@
 import React from 'react';
 // import Plot from 'react-plotly.js';
 
-const TailView = ({plane}) => {
+const TailView = (props) => {
+  console.log(props.planes)
   // const tailTime = tail.event_start_datetime;
   // const tailMetric = tail.metric;
   return (
     <div>
-      graph goes where
+      PRINT THIS SHIT
+      <p>Inside Tailview comp</p>
+      <h3>graph goes where</h3>
       console.log(tailTime)
       console.log(tailMetric)
     </div>

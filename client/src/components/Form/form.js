@@ -4,13 +4,13 @@ const Form = props => (
   <form>
     <div className="form-group">
       <label htmlFor="Tail">
-        <strong>Tail</strong>
+        <strong>TailNumber</strong>
       </label>
       <input
         className="form-control"
         id="tail"
         type="text"
-        placeholder="Type tail to search"
+        placeholder="Type a tail-number to search:"
         name="plane"
         onChange={props.handleInputChange}
         required
@@ -20,6 +20,7 @@ const Form = props => (
         onClick={props.handleFormSubmit}
         type="submit"
         className="btn btn-lg btn-danger"
+        // redirectTo={view}
       >
         Submit
       </button>
