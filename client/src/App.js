@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Tail from "./containers/tail";
 import TailView from "./components/TailView/tailview";
 import Authenticate from './button';
+import About from "./components/About"
 
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
   //   })
   // }
   authenticate = (history) => {
-    console.log(this)
+    console.log("inside authentication method in App.js", this)
     //this.setState({authenticated: true})
     //return history.push('/tail')
   }
@@ -33,8 +34,8 @@ class App extends Component {
         <div>
           <Router>
             <Switch>
-              <Route exact path="/tail" component={Tail} />
-              <Route exact path="/view" component={TailView} />
+              {/* <Route exact path="/tail" component={Tail} /> */}
+              {/* <Route exact path="/view" component={TailView} /> */}
             </Switch>
           </Router>
         </div>
@@ -44,6 +45,12 @@ class App extends Component {
       app = (
         <div>
         <Router>
+        <Switch>
+          {/* <Nav /> */}
+              <Route exact path="/tail" component={Tail} />
+              <Route exact path="/view" component={TailView} />
+              <Route exact path="/about" component={About} />
+
         <div>
           <h4>Welcome to FlightBuddy</h4>œ
 
@@ -55,16 +62,22 @@ class App extends Component {
             <Authenticate authenticate={this.authenticate()}/>
           </Modal>
           </div>
+            </Switch> 
           </Router>
         </div>
       )
     }
 
     return (
-      <div className="App">
-        <Nav />
-        {app}
-        <Footer />
+      <div className="app">
+      {/* please keep the content/footer divs as such--they serve a purpose in App.css! */}
+        <div className="content">
+          <Nav />
+          {app}
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }

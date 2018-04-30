@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Form from "../components/Form/form";
-import TailView from "../components/TailView/tailview";
+import TailView from "../components/TailView";
 import API from "../API.js";
 // import axios from "axios";
 
@@ -17,6 +17,28 @@ export default class Tail extends Component {
     });
   };
 
+  grabAllPlanes = () => { 
+    API.grabAllPlanes({
+      plane: this.state.plane
+    })
+    .then(response => this.setState({
+      plane: response.data
+    })
+    )
+    .catch(err => console.log("this is an error coming back: ", err))
+  }
+  // grabAllPlanes function working
+  
+  // getPlanes = () => {
+  //   API.getPlanes({
+  //     plane: this.state.plane,
+  //   })
+  //     .then(res => this.setState({
+  //       plane: res.data,
+  //       })
+  //     )
+  //     .catch(err => console.log("this is an error coming back: ", err));
+  // };
 
   getMetrics = () => {
     API.getPlanes(this.state.plane)
@@ -36,15 +58,20 @@ export default class Tail extends Component {
     this.getMetrics();
   };
 
-// Do we need this?
-  // componentDidMount() {
-  //   axios.get("/api/planes")
-  //   .then( (data) => this.setState({data}))
-  // };
+// Do we need this? --keep this for now
+  componentDidMount() {
+    axios.get("/api/planes")
+    .then( (res) => this.setState({plane: res.data}))
+  };
+
 
   render() {
     return (
         <div>
+          <div>
+          <TailView planes={this.state.plane}/>
+          </div>
+          <br></br>
           <Form
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}

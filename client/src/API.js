@@ -11,9 +11,16 @@ export default {
   //   return axios.get("/api/articles");
   // },
   // Deletes the saved article with the given id
+
+  grabAllPlanes: function () {
+    return axios.get("/api/planes")
+  },
+
   getPlanes: function(id) {
     return axios.get("/api/planes/" + id);
   }
+
+
   // Saves an article to the database
   // saveArticle: function(articleData) {
   //   return axios.post("/api/articles", articleData);

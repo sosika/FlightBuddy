@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 // app.use(express.static("client/build"));
 app.use(function(req, res, next) {
   console.log("things again")
-  console.log("What is our path", req.url)
+  console.log("What is our path server.js", req.url)
   next();
 });
 // Add routes, both API and view
