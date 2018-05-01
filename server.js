@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/", routes);
 // Serve up static assets
-// app.use(express.static("client/build"));
+// app.use(express.static("client/build")); //need both, go to routes and uncomment
 // app.use(function(req, res, next) {
 //   console.log("things again")
 //   console.log("What is our path server.js", req.url)
