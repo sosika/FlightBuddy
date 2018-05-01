@@ -22,9 +22,13 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
+    "chart.js": "^2.7.2",
     "express": "^4.15.4",
     "http-proxy": "^1.17.0",
     "mongoose": "^5.0.16",
+    "react": "^16.3.2",
+    "react-chartjs-2": "^2.7.2",
+    "react-dom": "^16.3.2",
     "react-materialize": "^2.2.0"
   }
 }

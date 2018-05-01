@@ -6,15 +6,14 @@ const TailView = ({metrics}) => {
   return(
   <ul>
     {metrics.map(metric => (
-      <li key={metric} className="list-group-item">
+      <li key={metric._id} className="list-group-item">
         tail is: {metric.tail} ;
           time is: {metric.event_start_datetime}
       </li>
     ))}
   </ul>
 )};
-
-
+ 
 export default TailView;
 
 // const TailView = (props) => {
