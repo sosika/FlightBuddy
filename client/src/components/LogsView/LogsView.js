@@ -57,11 +57,12 @@ class Chart extends React.Component {
     }
 
     render() {
+        console.log("we are inside the LogsView file", this.props)
         return (
             <div>
                 <nav>
                     <div className="">
-                        <Line data={data} width="600" height="250" />
+                        {/* <Line data={data} width={600} height={250} /> */}
                     </div>
                 </nav>
             </div>

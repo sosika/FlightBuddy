@@ -29,6 +29,12 @@ let data = {
 
 class Chart extends React.Component {
     componentDidMount() {
+
+        const metricA = this.props.stuff
+            .filter(({metric_source}) => metric_source === 'Console')
+            .map(plane => ({ ...plane, metric: JSON.parse(plane.metric)}));
+
+            console.log(metricA);
         //add our own data to key value pairs, this is dummy code. 
         this.setState({
             labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -61,7 +67,7 @@ class Chart extends React.Component {
         <div>
             <nav>
                 <div className="">
-                    <Line data={data} width="500" height="200" />
+                    <Line data={data} width={500} height={200} />
                 </div>
             </nav>
         </div>

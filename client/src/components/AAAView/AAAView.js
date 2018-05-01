@@ -66,7 +66,7 @@ class Chart extends React.Component {
             <div>
                 <nav>
                     <div className="">
-                        <Line data={data} width="500" height="200" />
+                        <Line data={data} width={500} height={200} />
                     </div>
                 </nav>
             </div>
