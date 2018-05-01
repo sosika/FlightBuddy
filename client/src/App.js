@@ -8,12 +8,14 @@ import Tail from "./containers/tail";
 import TailView from "./components/TailView/tailview";
 import Authenticate from './button';
 import About from "./components/About"
+import Chart from "./components/Chart"
 
 
 class App extends Component {
 
   state = {
-    authenticated: true
+    authenticated: true,
+    selectedFlight: {}
   }
 // Do we need this here?
   // componentWilllMount() {
@@ -34,8 +36,10 @@ class App extends Component {
         <div>
           <Router>
             <Switch>
-              {/* <Route exact path="/tail" component={Tail} /> */}
-              {/* <Route exact path="/view" component={TailView} /> */}
+              <Route exact path="/flights" component={Tail} />
+              <Route exact path="/view" component={TailView} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/flight" component={Chart} />
             </Switch>
           </Router>
         </div>
@@ -50,7 +54,8 @@ class App extends Component {
               <Route exact path="/tail" component={Tail} />
               <Route exact path="/view" component={TailView} />
               <Route exact path="/about" component={About} />
-
+              {/* <Route exact path="/chart" component={Chart} /> */}
+              
         <div>
           <h4>Welcome to FlightBuddy</h4>œ
 
