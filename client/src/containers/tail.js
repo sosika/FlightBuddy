@@ -69,7 +69,9 @@ export default class Tail extends Component {
     return (
         <div>
           <div>
-          <TailView planes={this.state.plane} metrics={this.state.metrics}/>
+          {this.state.plane.length > 0 &&
+            <TailView planes={this.state.plane} metrics={this.state.metrics} />
+          }
           </div>
           <br></br>
           <Form
