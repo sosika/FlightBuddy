@@ -9,12 +9,13 @@ import TailView from "./components/TailView/tailview";
 import Authenticate from './button';
 import About from "./components/About"
 import Chart from "./components/Chart"
+import SignUp from "./components/SignUp"
 
 
 class App extends Component {
 
   state = {
-    authenticated: true,
+    authenticated: false,
     selectedFlight: {}
   }
 // Do we need this here?
@@ -40,6 +41,11 @@ class App extends Component {
               <Route exact path="/view" component={TailView} />
               <Route exact path="/about" component={About} />
               <Route exact path="/flight" component={Chart} />
+              <div>
+                {/* <h4>Welcome to FlightBuddy!</h4>
+                <h6>Please Sign Up to Search Flight Details</h6>
+              <SignUp /> */}
+              </div>
             </Switch>
           </Router>
         </div>
@@ -57,15 +63,16 @@ class App extends Component {
               {/* <Route exact path="/chart" component={Chart} /> */}
               
         <div>
-          <h4>Welcome to FlightBuddy</h4>œ
-
-          <Modal
+          <h4>Welcome to FlightBuddy</h4>
+          <h6>Please Sign Up to Search Flight Details</h6>
+          <SignUp />
+          {/* <Modal
             header='Login:'
             trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>
             <p> This is where we can put a sign-up for for the user to login to view Flight Buddy product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.</p>
             <Authenticate authenticate={this.authenticate()}/>
-          </Modal>
+          </Modal> */}
           </div>
             </Switch> 
           </Router>
