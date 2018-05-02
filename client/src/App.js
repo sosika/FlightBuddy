@@ -9,13 +9,13 @@ import TailView from "./components/TailView/tailview";
 import Authenticate from './button';
 import About from "./components/About"
 import Chart from "./components/Chart"
-import SignUp from "./components/SignUp"
+import Signup from "./components/SignUp"
 
 
 class App extends Component {
 
   state = {
-    authenticated: false,
+    // authenticated: false,
     selectedFlight: {}
   }
 // Do we need this here?
@@ -24,11 +24,11 @@ class App extends Component {
   //     console.log("data", data)
   //   })
   // }
-  authenticate = (history) => {
-    console.log("inside authentication method in App.js", this)
-    //this.setState({authenticated: true})
-    //return history.push('/tail')
-  }
+  // authenticate = (history) => {
+  //   console.log("inside authentication method in App.js", this)
+  //   //this.setState({authenticated: true})
+  //   //return history.push('/tail')
+  // }
 
   render() {
     let app;
@@ -65,7 +65,7 @@ class App extends Component {
         <div>
           <h4>Welcome to FlightBuddy</h4>
           <h6>Please Sign Up to Search Flight Details</h6>
-          <SignUp />
+          <Signup />
           {/* <Modal
             header='Login:'
             trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>
