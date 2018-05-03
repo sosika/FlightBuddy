@@ -132,7 +132,7 @@ class SignupForm extends Component {
                     type="submit"
                 // redirectTo={view}
                 >
-                    Sign-In
+                    Sign-Up
                 </button>
             </div>
         </div>

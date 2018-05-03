@@ -1,16 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-// const session = require("express-session")
 const mongoose = require("mongoose");
 const dbConnection = require('./models')
 const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 const user = require('./routes/user')
-// const session = require('express-session')
+const session = require('express-session')
 // const MongoStore = require('connect-mongo')(session)
-// const passport = require('./passport');
+const passport = require('./passport');
 // const MONGODB_URI = "./config/mongo_uri"
 
 // Sessions
@@ -23,8 +22,8 @@ const user = require('./routes/user')
 //   })
 // )
 // Passport
-// app.use(passport.initialize())
-// app.use(passport.session()) // calls the deserializeUser
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
 
 
 // Connect to the Mongo DB
@@ -43,6 +42,26 @@ dbm.on("error", function (error) {
 dbm.once("open", function () {
   console.log("Mongoose connection successful.");
 });
+
+//sessions
+app.use(
+  session({
+    secret: 'i-love-otters', //pick a random string to make the hash that is generated secure
+    resave: false, //required
+    saveUninitialized: false //required
+  })
+)
+
+app.use((req, res, next) => {
+  console.log('req.session', req.session);
+  next()
+});
+
+// app.post('/user', (req, res) => {
+//   console.log('user signup');
+//   req.session.username = req.body.username;
+//   res.end()
+// })
 
 app.use("/", routes);
 app.use('/user', user)
