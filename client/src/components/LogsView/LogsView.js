@@ -1,74 +1,73 @@
-import React from "react";
-import { Line } from "react-chartjs-2"
-// import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import { Line, Bar } from "react-chartjs-2";
 
-let data = {
-    labels: "time",
-    datasets: [{
-        label: 'trial and error',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-    }]
+// Chart component
+class Chart extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      chartData1:this.props.chartData1,
+      chartData2:this.props.chartData2
+    }
+  }
+
+  getGraph = (chartData1, chartData2) => {
+    this.setState({
+      chartData1: chartData1,
+      chartData2: chartData2
+    })
+  }
+
+
+  render(){
+      return(
+        <div className="chart">
+          <Line
+            data={this.props.chartData1}
+            options={{
+              title:{
+                display: true,
+                text:"Signal Strength Graph",
+                fontSize: 25
+              },
+              legend:{
+                display: true,
+                position: 'bottom'
+              },
+                showXLabels: 20,
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero:true,
+                            autoSkip: true
+                        }
+                    }]
+                }
+
+            }}
+          />
+
+          <Bar
+            data={this.props.chartData2}
+            options={{
+              title:{
+                display: true,
+                text:"Usage Graph",
+                fontSize: 25
+              },
+              legend:{
+                display: true,
+                position: 'bottom'
+              }
+            }}
+          />
+        </div>
+
+      )
+    }
 }
-
-class Chart extends React.Component {
-    componentDidMount() {
-        //add our own data to key value pairs, this is dummy code. 
-        this.setState({
-            labels: "time",
-            datasets: [{
-                label: '# of Votes',
-                data: this.props.stuff,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        })
-    }
-
-    render() {
-        console.log("we are inside the LogsView file", this.props)
-        return (
-            <div>
-                <nav>
-                    <div className="">
-                        {/* <Line data={data} width={600} height={250} /> */}
-                    </div>
-                </nav>
-            </div>
-        )
-    }
-};
-
+// End Chart component
 
 export default Chart;

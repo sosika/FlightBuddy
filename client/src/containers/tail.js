@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import Form from "../components/Form/form";
-import TailView from "../components/TailView";
 import API from "../API.js";
-import axios from "axios";
+import LogsView from "../components/LogsView/LogsView";
 
 export default class Tail extends Component {
-  state = {
-    plane: "",
-    metrics: [{}]
-  };
+  constructor(){
+    super();
+    this.state = {
+      plane: "",
+      metrics: [{}],
+      chartData1: {},
+      chartData2: {},
+    };
+  }
+
 
   handleInputChange = event => {
     const { value } = event.target;
@@ -17,7 +22,61 @@ export default class Tail extends Component {
     });
   };
 
-  grabAllPlanes = () => { 
+  getChartData = () => {
+    const logsMetric = this.state.metrics.filter((metric) => metric.metric_source === 'Logs');
+    const AaaMetric = this.state.metrics.filter((metric) => metric.metric_source === 'AAA Usage');
+
+    const logsTime = logsMetric.map(object => object.event_start_datetime);
+    const logsSinr = logsMetric.map(object => Math.ceil(JSON.parse(object.metric).sinr));
+
+    const aaaMac = AaaMetric.map(object => JSON.parse(object.metric).device_mac_address);
+    const aaaUsage = AaaMetric.map(object => JSON.parse(object.metric).usage_download_mb);
+
+    this.setState({
+      chartData1:{
+        labels: logsTime,
+        datasets:[
+          {
+            label:'sinr',
+            data:logsSinr,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 1
+          }
+        ]
+      },
+
+      chartData2:{
+        labels: aaaMac,
+        datasets:[
+          {
+            label:'Usage',
+            data: aaaUsage,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+          }
+        ]
+      }
+    })
+
+  }
+
+  grabAllPlanes = () => {
     API.grabAllPlanes({
       plane: this.state.plane
     })
@@ -27,18 +86,6 @@ export default class Tail extends Component {
     )
     .catch(err => console.log("this is an error coming back: ", err))
   }
-  // grabAllPlanes function working
-  
-  // getPlanes = () => {
-  //   API.getPlanes({
-  //     plane: this.state.plane,
-  //   })
-  //     .then(res => this.setState({
-  //       plane: res.data,
-  //       })
-  //     )
-  //     .catch(err => console.log("this is an error coming back: ", err));
-  // };
 
   getMetrics = () => {
     API.getPlanes(this.state.plane)
@@ -50,6 +97,9 @@ export default class Tail extends Component {
         console.log('metrics', this.state.metrics)
       }
       )
+      .then( ()=> {
+        this.getChartData()
+        console.log(this.state)} )
       .catch(err => console.log(err));
   };
 
@@ -58,27 +108,22 @@ export default class Tail extends Component {
     this.getMetrics();
   };
 
-// Do we need this? --keep this for now
-  componentDidMount() {
-    axios.get("/api/planes")
-    .then( (res) => this.setState({plane: res.data}))
-  };
-
 
   render() {
     return (
         <div>
-          <div>
-          {this.state.plane.length > 0 &&
-            <TailView planes={this.state.plane} metrics={this.state.metrics} />
-          }
-          </div>
-          <br></br>
           <Form
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
-            plane={this.state.plane}
           />
+          <div>
+          {this.state.plane.length > 0 &&
+            <LogsView
+            chartData1={this.state.chartData1}
+            chartData2={this.state.chartData2}
+            redraw/>
+          }
+          </div>
         </div>
     )
   }
