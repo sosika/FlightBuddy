@@ -9,16 +9,20 @@ class Chart extends Component {
       chartData1:this.props.chartData1,
       chartData2:this.props.chartData2,
       chartData3:this.props.chartData3,
-      chartData4:this.props.chartData4
+      chartData4:this.props.chartData4,
+      chartData5:this.props.chartData5,
+      chartData5:this.props.chartData6
     }
   }
 
-  getGraph = (chartData1, chartData2, chartData3, chartData4) => {
+  getGraph = (chartData1, chartData2, chartData3, chartData4, chartData5, chartData6) => {
     this.setState({
       chartData1: chartData1,
       chartData2: chartData2,
       chartData3: chartData3,
-      chartData4: chartData4
+      chartData4: chartData4,
+      chartData5: chartData5,
+      chartData5: chartData6
     })
   }
 
@@ -32,6 +36,22 @@ class Chart extends Component {
               title:{
                 display: true,
                 text:"Signal Strength Graph",
+                fontSize: 25
+              },
+              legend:{
+                display: true,
+                position: 'bottom'
+              }
+
+            }}
+          />
+
+          <Line
+            data={this.props.chartData5}
+            options={{
+              title:{
+                display: true,
+                text:"Data Rate Graph",
                 fontSize: 25
               },
               legend:{
@@ -87,6 +107,23 @@ class Chart extends Component {
             }
           }}
         />
+
+      <Line
+        data={this.props.chartData6}
+        options={{
+          title:{
+            display: true,
+            text:"Number of Aircraft",
+            fontSize: 25
+          },
+          legend:{
+            display: true,
+            position: 'bottom'
+          }
+
+        }}
+      />
+
       </div>
 
       )
@@ -95,15 +132,3 @@ class Chart extends Component {
 // End Chart component
 
 export default Chart;
-
-// showXLabels: 20,
-// responsive: true,
-// maintainAspectRatio: false,
-// scales: {
-//     xAxes: [{
-//         ticks: {
-//             beginAtZero:true,
-//             autoSkip: true
-//         }
-//     }]
-// }
