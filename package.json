@@ -25,6 +25,7 @@
     "chart.js": "^2.7.2",
     "express": "^4.15.4",
     "http-proxy": "^1.17.0",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.16",
     "react": "^16.3.2",
     "react-chartjs-2": "^2.7.2",

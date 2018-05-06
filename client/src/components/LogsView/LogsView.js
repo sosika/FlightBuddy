@@ -11,7 +11,7 @@ class Chart extends Component {
       chartData3:this.props.chartData3,
       chartData4:this.props.chartData4,
       chartData5:this.props.chartData5,
-      chartData5:this.props.chartData6
+      chartData6:this.props.chartData6
     }
   }
 
@@ -22,7 +22,7 @@ class Chart extends Component {
       chartData3: chartData3,
       chartData4: chartData4,
       chartData5: chartData5,
-      chartData5: chartData6
+      chartData6: chartData6
     })
   }
 

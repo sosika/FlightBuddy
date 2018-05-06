@@ -11,6 +11,10 @@ export default class Tail extends Component {
       plane: "",
       numberOfDev: 0,
       totalUsage: 0,
+      avgDrc: 0,
+      avgRtt: 0,
+      startTime: "",
+      endTime: "",
       metrics: [{}],
       chartData1: {},
       chartData2: {},
@@ -33,7 +37,8 @@ export default class Tail extends Component {
     const logsMetric = this.state.metrics.filter((metric) => metric.metric_source === 'Logs');
     const AaaMetric = this.state.metrics.filter((metric) => metric.metric_source === 'AAA Usage');
 
-    const numberOfDev = Math.max(...logsMetric.map(object => JSON.parse(object.metric).total_pass));
+    // const numberOfDev = Math.max(...logsMetric.map(object => JSON.parse(object.metric).total_pass));
+    const numberOfDev = AaaMetric.length;
 
     const logsTime = logsMetric.map(object => object.event_start_datetime);
     const logsSinr = logsMetric.map(object => Math.ceil(JSON.parse(object.metric).sinr));
@@ -45,11 +50,31 @@ export default class Tail extends Component {
 
     const aaaMac = AaaMetric.map(object => JSON.parse(object.metric).device_mac_address);
     const aaaUsage = AaaMetric.map(object => JSON.parse(object.metric).usage_download_mb);
-    const totalUsage = aaaUsage.reduce((a, b) => a + b);
+
+    const totalUsage = aaaUsage
+                        .map(x => parseInt(x))
+                        .reduce((a, b) => a + b, 0);
+
+    const sumDrc = logsDrc
+                    .map(x => parseInt(x))
+                    .reduce((a, b) => a + b);
+    const avgDrc = sumDrc/logsDrc.length;
+
+    const sumRtt = logsRtt
+                    .map(x => parseInt(x))
+                    .reduce((a, b) => a + b);
+    const avgRtt = sumRtt/logsRtt.length;
+
+    const startTime = logsTime[0];
+    const endTime = logsTime[logsTime.length - 1];
 
     this.setState({
       numberOfDev: numberOfDev,
       totalUsage: totalUsage,
+      avgDrc: avgDrc,
+      avgRtt: avgRtt,
+      startTime: startTime,
+      endTime: endTime,
 
       chartData1:{
         labels: logsTime,
@@ -205,6 +230,10 @@ export default class Tail extends Component {
               <Summary
                 devices={this.state.numberOfDev}
                 totalUsage={this.state.totalUsage}
+                avgDrc={this.state.avgDrc}
+                avgRtt={this.state.avgRtt}
+                startTime={this.state.startTime}
+                endTime={this.state.endTime}
               />
               <LogsView
                 chartData1={this.state.chartData1}
