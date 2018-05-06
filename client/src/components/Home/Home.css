@@ -1,0 +1,12 @@
+.plane{
+    background-image: "./images/plane.jpg";
+    background-size: cover;
+    height: 375px;
+    width: 100%;
+    z-index: -1;
+}
+
+/* .text {
+    position: relative;
+    z-index: 10;
+} */

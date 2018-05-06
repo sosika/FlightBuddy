@@ -1,11 +1,23 @@
 body {
   /* background-color: #010203; */
+  /* background-color: #fff; */
+  background-image: "./images/plane.jpg";
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+}
 
-  background-color: #fff;
+.background-image{ 
+  /* border: dotted;
+  border-color: green;
+  border-width: 10px;
+  height: 350px;
+  text-align: center;  */
 }
   
 .content {
   min-height: calc(100vh - 90px);
+
 }
 .footer {
   height: 40px;
