@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
 
 const Nav = () => (
     <div>
-        <nav>
+        {/* <nav>
             <div className="nav-wrapper grey">
                 <a href="" className="brand-logo right">Flight Buddy Logo</a>
                 <ul className="">
@@ -14,7 +13,7 @@ const Nav = () => (
                     <li className="NavItem"><a href="/flight">Charts</a></li>
                 </ul>
             </div>
-        </nav>
+        </nav> */}
     </div>
 );
 

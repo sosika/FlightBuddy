@@ -41,7 +41,7 @@ class LoginForm extends Component {
                     })
                     // update the state to redirect to home
                     this.setState({
-                        redirectTo: '/'
+                        redirectTo: '/home'
                     })
                 }
             }).catch(error => {
@@ -56,9 +56,9 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
-                    <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
+                    <h6>Please Login to FlightBuddy:</h6>
                             <div className="col-1 col-ml-auto">
                                 <label className="form-label" htmlFor="username">Username</label>
                             </div>

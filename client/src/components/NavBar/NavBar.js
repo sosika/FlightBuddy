@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Route, Link } from 'react-router-dom'
-// import logo from '../logo.svg';
+import { NavItem } from 'react-materialize'
+import "./Navbar.css"
 // import '../App.css';
 import axios from 'axios'
 
@@ -29,42 +30,72 @@ class Navbar extends Component {
 
     render() {
         const loggedIn = this.props.loggedIn;
-        console.log('navbar render, props: ')
-        console.log(this.props);
-
+        // const loggedIn = this.props.loggedIn;
+        
+        // console.log('navbar render, props: ')
+        // console.log(this.props);
+        
         return (
-            <div>
-
-                <header className="navbar App-header" id="nav-container">
-                    <div className="col-4" >
+            <div className="navigation">
+                <nav className="">
+                <div className="nav-wrapper grey" id="">
+                 <a href="" className="brand-logo right">Flight Buddy Logo</a>
+                    <div className="" >
+                    {/* in the loggedIn section you can put the search and charts links to those components */}
                         {loggedIn ? (
-                            <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-secondary">logout</span></Link>
-
-                            </section>
+                                <ul className="">
+                                    <li className="navbar-section">
+                                        <Link to="/" className="text-secondary">
+                                            <span className="text-secondary">home</span>
+                                        </Link>
+                                    </li>
+                                    {/* <li className="navbar-section">
+                                        <Link to="/login" className="text-secondary">
+                                            <span className="text-secondary">login</span>
+                                        </Link>
+                                    </li>
+                                    <li className="navbar-section">
+                                        <Link to="/signup" className="">
+                                            <span className="text-secondary">sign up</span>
+                                        </Link>
+                                    </li> */}
+                                    <li className="navbar-section">
+                                        <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                                            <span className="text-secondary">Logout</span></Link>
+                                    </li>
+                                </ul>
+                            
                         ) : (
-                                <section className="navbar-section">
-                                    <Link to="/" className="btn btn-link text-secondary">
+                            <ul className="">
+                                <li className="navbar-section">
+                                    <Link to="/" className="text-secondary">
                                         <span className="text-secondary">home</span>
                                     </Link>
-                                    <Link to="/login" className="btn btn-link text-secondary">
+                                </li>
+                                <li className="navbar-section">
+                                    <Link to="/login" className="text-secondary">
                                         <span className="text-secondary">login</span>
                                     </Link>
-                                    <Link to="/signup" className="btn btn-link">
+                                </li>
+                                <li className="navbar-section">
+                                    <Link to="/signup" className="">
                                         <span className="text-secondary">sign up</span>
                                     </Link>
-                                </section>
+                                </li>
+                            </ul>
                             )}
                     </div>
                     <div className="col-4 col-mr-auto">
                         <div id="top-filler"></div>
                         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                        <h1 className="App-title">MERN Passport</h1>
-                    </div>
-                </header>
-            </div>
+                        <h1 className="App-title"></h1>
+                        <div>
 
+                        </div>
+                    </div>
+                </div>
+                </nav>
+            </div>
         );
 
     }

@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
+import "./Home.css"
 
 class Home extends Component {
-    // constructor() {
-    //     super()
-    // }
-
     render() {
-        const imageStyle = {
-            width: 400
-        }
+        // const imageStyle = {
+        //     height: 100,
+        //     width: 100
+        // }
         return (
             <div>
-                <p>It's good to be home</p>
-                <img style={imageStyle} alt="" src="https://i.ytimg.com/vi/N1icEHtgb3g/maxresdefault.jpg" />
+            <div>
+                <img className="plane" alt="" src="./images/plane.jpg" />
+            </div>
+            <div>
+                {/* <p className="text">Welcome to the Flight Buddy Homepage</p> */}
+            </div>
             </div>
         )
-
     }
 }
 

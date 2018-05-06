@@ -1,50 +1,5 @@
-// import React from "react";
-// import axios from "axios";
-// import "./SignUp.css"
-// class SignUp extends React.Component {
-//     // form action should go to search a flight page
-
-//     state = {
-//         username: "",
-//         password: "",
-//         confirmPassword: ""
-//     }
-
-//     handleChange = event => {
-//         // const { value } = event.target;        
-//         this.setState({
-//             [event.target.name]: event.target.value
-//             // password: value
-//         });
-//     };
-//     //check syntax for handleChange for updating state for username and password
-
-//     handleSubmit = event => {
-//         event.preventDefault();
-//         console.log("sign-up-form, username: ")
-//         console.log(this.state.username)
-//         // console.log(this.state.password)
-//         //request to server here
-//         axios.post("/user/", {
-//             username: this.state.username,
-//             password: this.state.password
-//         })
-//         .then(response => {
-//             console.log("this is the axios response", response)
-//             if(response.data){
-//                 console.log("signup is successful!!!")
-//                 this.setState({
-//                     redirectTo: '/about'
-//                 })
-//             } else {
-//                 console.log("Error: Sign-up failed");
-//             }
-//         }).catch(err => {
-//             console.log('Sign up server error: ')
-//             console.log(err);
-//         })
-//     };
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import "./SignUp.css"
 
@@ -54,7 +9,9 @@ class SignupForm extends Component {
         this.state = {
             username: '',
             password: '',
-            confirmPassword: ''
+            confirmPassword: '',
+            redirectTo: null
+            
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -83,17 +40,20 @@ class SignupForm extends Component {
 						redirectTo: '/login'
 					})
 				} else {
-					console.log('username already taken')
+                    console.log('username already taken')
 				}
 			}).catch(error => {
 				console.log('signup error: ')
-				console.log(error)
-
+                console.log(error)
 			})
     }
 
     render(){
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
     return(
+        <div>
     <form>
         <div className="form-group">
             <label htmlFor="SignIn">
@@ -137,9 +97,10 @@ class SignupForm extends Component {
             </div>
         </div>
     </form>
+    </div>
+        
     )};
+}
 };
 
 export default SignupForm;
-
-
