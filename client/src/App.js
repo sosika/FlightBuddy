@@ -15,7 +15,6 @@ import Navbar from './components/NavBar'
 import Home from './components/Home'
 import Landing from './components/Landing'
 
-
 class App extends Component {
 
   constructor() {
@@ -33,6 +32,7 @@ class App extends Component {
   componentDidMount() {
     this.getUser()
   }
+
 
   updateUser(userObject) {
     this.setState(userObject)
