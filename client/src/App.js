@@ -5,10 +5,8 @@ import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Tail from "./containers/tail";
-import TailView from "./components/TailView/tailview";
 import Authenticate from './button';
 import About from "./components/About"
-import Chart from "./components/Chart"
 
 
 class App extends Component {
@@ -37,9 +35,7 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path="/flights" component={Tail} />
-              <Route exact path="/view" component={TailView} />
               <Route exact path="/about" component={About} />
-              <Route exact path="/flight" component={Chart} />
             </Switch>
           </Router>
         </div>
@@ -52,10 +48,9 @@ class App extends Component {
         <Switch>
           {/* <Nav /> */}
               <Route exact path="/tail" component={Tail} />
-              <Route exact path="/view" component={TailView} />
               <Route exact path="/about" component={About} />
               {/* <Route exact path="/chart" component={Chart} /> */}
-              
+
         <div>
           <h4>Welcome to FlightBuddy</h4>œ
 
@@ -67,7 +62,7 @@ class App extends Component {
             <Authenticate authenticate={this.authenticate()}/>
           </Modal>
           </div>
-            </Switch> 
+            </Switch>
           </Router>
         </div>
       )
