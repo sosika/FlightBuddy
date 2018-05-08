@@ -10,10 +10,10 @@ class Home extends Component {
         return (
             <div>
             <div>
-                <img className="plane" alt="" src="./images/plane.jpg" />
+                <h4 className="text">Welcome to the Flight Buddy Homepage</h4>
             </div>
             <div>
-                {/* <p className="text">Welcome to the Flight Buddy Homepage</p> */}
+                <img className="plane" alt="" src="./images/plane.jpg" />
             </div>
             </div>
         )

@@ -6,14 +6,15 @@ import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router
 // import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Tail from "./containers/tail";
-import TailView from "./components/TailView/tailview";
+// import TailView from "./components/TailView/tailview";
 import About from "./components/About"
-import Chart from "./components/Chart"
+// import Chart from "./components/Chart"
 import SignUp from "./components/SignUp"
 import LoginForm from './components/Login'
 import Navbar from './components/NavBar'
 import Home from './components/Home'
 import Landing from './components/Landing'
+import Logout from "./components/Logout"
 
 class App extends Component {
 
@@ -64,20 +65,23 @@ class App extends Component {
     return (
       <div className="app">
         <div className="content">
-          {/* <Nav /> */}
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
           {/* Welcome to Flight Buddy: */}
           {this.state.loggedIn &&
-            <p>Welcome to Flight Buddy! Welcome back: {this.state.username}!</p> 
-            
+            <p className="welcomeUser"> Welcome back: {this.state.username}!</p> 
           }
+          
           {/* {!this.state.loggedIn &&
             <p>Thanks for using Flight Buddy Login again soon!</p>
 
           } */}
           <div className="background-image">
           {/* Routes to different components */}
+          <Route exact path="/loggedOut" component={Logout} />
+          <Route exact path="/flights" component={Tail} />
           <Route exact path="/about" component={About} />
+          {/* <Route exact path="/loggedOut" component={Logout} /> */}
+          
           <Route
             exact path="/"
             component={Landing} />
