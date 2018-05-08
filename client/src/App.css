@@ -1,23 +1,74 @@
 body {
   /* background-color: #010203; */
-
   background-color: #fff;
+  /* background-image: "./images/plane.jpg";
+  background-size: cover;
+  height: 500px;
+  width: 100%; */
+}
+
+.background-image{ 
+  /* border: dotted;
+  border-color: green;
+  border-width: 10px;
+  height: 350px;
+  text-align: center;  */
 }
   
 .content {
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 70px);
+  margin-bottom: 60px;
+
 }
-.footer {
-  height: 40px;
-}
+/* .footer {
+  /* height: 40px; */
+/* } */
 
 .modal {
   margin-left: 100px;
 }
 
-/* h4 {
+h4 {
   color: white;
-} */
+  text-align: center;
+}
+h5 {
+  color: white;
+  text-align: center;
+}
+h6 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+.welcomeUser{
+  text-align: right
+}
+
+.summary {
+  margin-top: 75px;
+  margin: 50px;
+  color: white;
+  text-align: center;
+}
+
+.chart {
+  width: 800px;
+  margin-left: 70px;
+}
+
+.footer-content{
+  text-align: center;
+  /* line-height: 2; */
+  margin-bottom: 15px;
+  color: white;
+}
+
 
 
 /* .App {

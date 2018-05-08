@@ -1,0 +1,10 @@
+.form-group {
+    width: 250px;
+    margin-left: 375px;
+    margin-top: 35px;
+    /* border-color: peru; */
+    /* border-width: 3px;
+    border-style: dashed; */
+    padding: 10px;
+    text-align: center;
+}

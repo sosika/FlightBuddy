@@ -1,6 +1,7 @@
 import React from "react";
 
 const Form = props => (
+  // form action should go to charts/graphs page
   <form action="/whatever/page">
     <div className="form-group">
       <label htmlFor="Tail">

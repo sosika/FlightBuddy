@@ -1,79 +1,109 @@
 import { Button, Icon, Modal } from 'react-materialize'
 import React, { Component } from 'react'
 import './App.css';
+import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Tail from "./containers/tail";
-import Authenticate from './button';
+// import TailView from "./components/TailView/tailview";
 import About from "./components/About"
-
+// import Chart from "./components/Chart"
+import SignUp from "./components/SignUp"
+import LoginForm from './components/Login'
+import Navbar from './components/NavBar'
+import Home from './components/Home'
+import Landing from './components/Landing'
+import Logout from "./components/Logout"
 
 class App extends Component {
 
-  state = {
-    authenticated: true,
-    selectedFlight: {}
+  constructor() {
+    super()
+    this.state = {
+      loggedIn: false,
+      username: null
+    }
+
+    this.getUser = this.getUser.bind(this)
+    this.componentDidMount = this.componentDidMount.bind(this)
+    this.updateUser = this.updateUser.bind(this)
   }
-// Do we need this here?
-  // componentWilllMount() {
-  //   fetch("/api/planes/15121").then((data) => {
-  //     console.log("data", data)
-  //   })
-  // }
-  authenticate = (history) => {
-    console.log("inside authentication method in App.js", this)
-    //this.setState({authenticated: true})
-    //return history.push('/tail')
+
+  componentDidMount() {
+    this.getUser()
   }
+
+
+  updateUser(userObject) {
+    this.setState(userObject)
+  }
+
+  getUser() {
+    axios.get('/user/').then(response => {
+      console.log('Get user response: ')
+      console.log(response.data)
+      if (response.data.user) {
+        console.log('Get User: There is a user saved in the server session: ')
+
+        this.setState({
+          loggedIn: true,
+          username: response.data.user.username
+        })
+      } else {
+        console.log('Get user: no user');
+        this.setState({
+          loggedIn: false,
+          username: null
+        })
+      }
+    })
+  }
+
 
   render() {
-    let app;
-    if(this.state.authenticated) {
-      app = (
-        <div>
-          <Router>
-            <Switch>
-              <Route exact path="/flights" component={Tail} />
-              <Route exact path="/about" component={About} />
-            </Switch>
-          </Router>
-        </div>
-      )
-    }
-    else {
-      app = (
-        <div>
-        <Router>
-        <Switch>
-          {/* <Nav /> */}
-              <Route exact path="/tail" component={Tail} />
-              <Route exact path="/about" component={About} />
-              {/* <Route exact path="/chart" component={Chart} /> */}
-
-        <div>
-          <h4>Welcome to FlightBuddy</h4>œ
-
-          <Modal
-            header='Login:'
-            trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>
-            <p> This is where we can put a sign-up for for the user to login to view Flight Buddy product. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.</p>
-            <Authenticate authenticate={this.authenticate()}/>
-          </Modal>
-          </div>
-            </Switch>
-          </Router>
-        </div>
-      )
-    }
-
     return (
       <div className="app">
-      {/* please keep the content/footer divs as such--they serve a purpose in App.css! */}
         <div className="content">
-          <Nav />
-          {app}
+          <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+          {/* Welcome to Flight Buddy: */}
+          {this.state.loggedIn &&
+            <p className="welcomeUser"> Welcome back: {this.state.username}!</p> 
+          }
+          
+          {/* {!this.state.loggedIn &&
+            <p>Thanks for using Flight Buddy Login again soon!</p>
+
+          } */}
+          {/* <div className="background-image"> */}
+          {/* Routes to different components */}
+          <Route exact path="/loggedOut" component={Logout} />
+          <Route exact path="/flights" component={Tail} />
+          <Route exact path="/about" component={About} />
+          {/* <Route exact path="/loggedOut" component={Logout} /> */}
+          
+          <Route
+            exact path="/"
+            component={Landing} />
+          <Route
+            exact path="/home"
+            component={Home} />
+          <Route
+            path="/login"
+            render={() =>
+              <LoginForm
+                updateUser={this.updateUser}
+              />}
+          />
+          <Route
+            path="/signup"
+            render={() =>
+              <SignUp
+                signup={this.signup}
+              />}
+          />
+        {/* </div> */}
+        {/* closes background image above */}
         </div>
         <div className="footer">
           <Footer />
@@ -84,6 +114,4 @@ class App extends Component {
 }
 
 export default App;
-/* <Route exact path="/charts" component={Charts} />
-<Route exact path="/charts/:id" component={Specific-Flight-Detail} />
-<Route component={NoMatch} /> */
+
