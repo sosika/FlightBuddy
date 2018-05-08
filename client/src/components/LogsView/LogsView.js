@@ -93,7 +93,7 @@ class Chart extends Component {
           />
 
 
-        <Radar
+        <Line
           data={this.props.chartData4}
           options={{
             title:{
@@ -104,7 +104,14 @@ class Chart extends Component {
             legend:{
               display: true,
               position: 'bottom'
-            }
+            },
+            xAxes: [{
+              type: 'time',
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 20
+              }
+            }]
           }}
         />
 
@@ -119,7 +126,7 @@ class Chart extends Component {
           legend:{
             display: true,
             position: 'bottom'
-          }
+          },
 
         }}
       />
