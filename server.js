@@ -33,7 +33,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flightbuddydb")
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use(express.static("client/build")); //need both, go to routes and uncomment
+app.use(express.static("client/build")); //need both, go to routes and uncomment
 
 var dbm = mongoose.connection;
 dbm.on("error", function (error) {
