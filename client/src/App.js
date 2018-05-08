@@ -75,7 +75,7 @@ class App extends Component {
             <p>Thanks for using Flight Buddy Login again soon!</p>
 
           } */}
-          <div className="background-image">
+          {/* <div className="background-image"> */}
           {/* Routes to different components */}
           <Route exact path="/loggedOut" component={Logout} />
           <Route exact path="/flights" component={Tail} />
@@ -102,7 +102,7 @@ class App extends Component {
                 signup={this.signup}
               />}
           />
-        </div>
+        {/* </div> */}
         {/* closes background image above */}
         </div>
         <div className="footer">

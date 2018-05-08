@@ -19,11 +19,11 @@ const Footer = () => (
                     </div> */}
                 {/* </div> */}
             {/* </div> */}
-            <div className="footer-copyright">
-                <div className="container">
+            {/* <div className="footer-copyright"> */}
+                <div className="footer-content">
                     © 2018 Flight Buddy
                 </div>
-            </div>
+            {/* </div> */}
         </footer>
 );
 
