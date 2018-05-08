@@ -93,7 +93,7 @@ class Chart extends Component {
           />
 
 
-        <Line
+        <Radar
           data={this.props.chartData4}
           options={{
             title:{
