@@ -29,6 +29,7 @@ app.use(passport.session()) // calls the deserializeUser
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flightbuddydb");
 
+
 // MIDDLEWARE
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }));
