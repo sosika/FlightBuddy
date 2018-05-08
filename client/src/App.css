@@ -1,6 +1,6 @@
 body {
-  background-color: fff;
-  /* background-color: #fff; */
+  /* background-color: #010203; */
+  background-color: #fff;
   /* background-image: "./images/plane.jpg";
   background-size: cover;
   height: 500px;
@@ -20,9 +20,9 @@ body {
   margin-bottom: 60px;
 
 }
-.footer {
+/* .footer {
   /* height: 40px; */
-}
+/* } */
 
 .modal {
   margin-left: 100px;
@@ -60,6 +60,13 @@ p {
 .chart {
   width: 800px;
   margin-left: 70px;
+}
+
+.footer-content{
+  text-align: center;
+  /* line-height: 2; */
+  margin-bottom: 15px;
+  color: white;
 }
 
 

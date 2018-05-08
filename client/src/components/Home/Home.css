@@ -1,6 +1,7 @@
 .plane{
-    position: absolute;
-    height: 100vh;
+    /* position: absolute; */
+    /* height: 100vh; */
+    height: 600px;
     width: 100vw;
     z-index: -100;
 }
@@ -20,12 +21,13 @@ h4{
 }
 
 .footer {
-    position: fixed;
-    height: 100vh;
-    width: 100%;
+    /* position: fixed; */
+    /* height: 100vh; */
+    /* width:100%; */
 }
 
 .page-footer {
+    height: 60px;
     position: fixed;
     width: 100%;
     bottom: 0px;
