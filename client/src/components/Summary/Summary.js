@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment-precise-range-plugin';
+import "./Summary.css"
 
 const Summary = ({ devices, totalUsage, avgDrc, avgRtt, startTime, endTime }) => {
   var m1 = moment(startTime,'YYYY-MM-DD HH:mm:ss');

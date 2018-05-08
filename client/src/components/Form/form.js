@@ -1,11 +1,12 @@
 import React from "react";
+import "./Form.css"
 
 const Form = props => (
   // form action should go to charts/graphs page
   <form action="/whatever/page">
     <div className="form-group">
       <label htmlFor="Tail">
-        <strong>TailNumber</strong>
+        <strong>Aircraft Tail-Number</strong>
       </label>
       <input
         className="form-control"
@@ -17,11 +18,11 @@ const Form = props => (
         onChange={props.handleInputChange}
         required
       />
-    <div className="pull-right">
+    <div className="pull-right grey">
       <button
         onClick={props.handleFormSubmit}
         type="submit"
-        className="btn btn-lg btn-danger"
+        className="btn btn-lg btn-primary"
         // redirectTo={view}
       >
         Submit
