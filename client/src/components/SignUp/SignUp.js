@@ -60,7 +60,7 @@ class SignupForm extends Component {
                 <strong>Create An Account:</strong>
             </label>
             <label htmlFor="username">
-                <strong>Username: </strong>
+                <strong></strong>
             </label>
             <input
                 className="form-control"
@@ -87,7 +87,7 @@ class SignupForm extends Component {
             />
             <div className="pull-right">
                 <button
-                    className="btn btn-lg btn-danger"
+                    className="btn btn-lg btn-primary grey"
                     onClick={this.handleSubmit}
                     type="submit"
                 // redirectTo={view}

@@ -4,15 +4,19 @@ import { Button, Icon, Modal } from 'react-materialize'
 
 class Landing extends Component {
     render() {
-        // const imageStyle = {
-        //     height: 100,
-        //     width: 100
-        // }
+        const imageStyle = {
+            height: 325,
+            width: 375,
+            zIndex: 10,
+            marginLeft: 275
+        }
         return (
             <div>
-                < h4 > Welcome to FlightBuddy</h4 >
+                <h4> Welcome to FlightBuddy</h4>
                 <h6>Please Sign Up to Search Flight Details</h6>
-                <p>this should only show on the landing page, or the home/logged out/initial</p>
+                <img className="aboutFB" style={imageStyle} alt="" src="./images/Presentation.jpg"></img>
+                
+                {/* <p>this should only show on the landing page, or the home/logged out/initial</p> */}
                 {/* <Modal
                     header='Login:'
                     trigger={<Button waves='light'>Sign Up For Flight Buddy!<Icon right>insert_chart</Icon></Button>}>
