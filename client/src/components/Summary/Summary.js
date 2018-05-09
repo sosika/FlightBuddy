@@ -7,7 +7,7 @@ const Summary = ({ devices, totalUsage, avgDrc, avgRtt, startTime, endTime }) =>
   var m1 = moment(startTime,'YYYY-MM-DD HH:mm:ss');
   var m2 = moment(endTime,'YYYY-MM-DD HH:mm:ss');
   var diff = moment.preciseDiff(m1, m2);
-  console.log('startTime',startTime);
+  
   return (
     <ul className="summary">
       <li>Flight start time: {moment(startTime).format("dddd, MMMM Do YYYY") + " " + startTime.substring(11,startTime.length)}</li>

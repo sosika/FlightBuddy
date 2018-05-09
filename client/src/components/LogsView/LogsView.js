@@ -104,7 +104,14 @@ class Chart extends Component {
             legend:{
               display: true,
               position: 'bottom'
-            }
+            },
+            xAxes: [{
+              type: 'time',
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 20
+              }
+            }]
           }}
         />
 
@@ -119,7 +126,7 @@ class Chart extends Component {
           legend:{
             display: true,
             position: 'bottom'
-          }
+          },
 
         }}
       />
