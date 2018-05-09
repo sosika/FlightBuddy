@@ -46,6 +46,10 @@ class Chart extends Component {
             }}
           />
 
+          <br />
+          <br />
+          
+
           <Line
             data={this.props.chartData5}
             options={{
@@ -62,6 +66,10 @@ class Chart extends Component {
             }}
           />
 
+          <br />   
+          <br />
+                 
+
           <Bar
             data={this.props.chartData2}
             options={{
@@ -76,6 +84,10 @@ class Chart extends Component {
               }
             }}
           />
+          <br />
+          <br />
+          
+          
 
           <Line
             data={this.props.chartData3}
@@ -91,6 +103,10 @@ class Chart extends Component {
               }
             }}
           />
+          <br />
+          <br />
+          
+          
 
 
         <Radar
@@ -115,6 +131,11 @@ class Chart extends Component {
           }}
         />
 
+          <br />
+          <br />
+          
+        
+
       <Line
         data={this.props.chartData6}
         options={{
@@ -130,6 +151,8 @@ class Chart extends Component {
 
         }}
       />
+          <br />
+          
 
       </div>
 
