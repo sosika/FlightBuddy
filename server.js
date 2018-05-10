@@ -10,7 +10,7 @@ const user = require('./routes/user')
 const session = require('express-session')
 // const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
-const MONGODB_URI = require("./config/keys").default;
+const MONGODB_URI = require("./config/keys")
 
 // Sessions
 // app.use(

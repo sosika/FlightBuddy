@@ -47,7 +47,9 @@ p {
 }
 
 .welcomeUser{
-  text-align: right
+  text-align: right;
+  margin-right: 25px;
+  margin-top: 5px;
 }
 
 
@@ -61,6 +63,10 @@ p {
   /* line-height: 2; */
   margin-bottom: 15px;
   color: white;
+}
+
+.aboutFB{
+  margin-bottom: 10px;
 }
 
 

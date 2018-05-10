@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "../Home/Home.css"
-import Header from "../NavBar"
+import NavBar from "../NavBar"
+
 class Logout extends Component {
     render() {
         // const imageStyle = {
@@ -9,12 +10,10 @@ class Logout extends Component {
         // }
         return (
             <div>
-            {/* <Header /> */}
                 <div>
+            {/* <NavBar /> */}
                     <h4 className="text">Thanks for Using FlightBuddy! Please Login again to Search Flight Metrics</h4>
                 </div>
-                {/* <div className="spaceFix">
-                </div> */}
                 <div>
                     <img className="plane" alt="" src="./images/plane.jpg" />
                 </div>
