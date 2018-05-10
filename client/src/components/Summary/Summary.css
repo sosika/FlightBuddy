@@ -1,6 +1,19 @@
+.parent {
+    display: table;
+    vertical-align: middle;
+    display: inline-block;
+}
+
 .summary {
   margin-top: 150px;
   margin: 50px;
   color: black;
   text-align: center;
+  
+}
+
+.item {
+    vertical-align: middle;
+    display: table-cell;
+    /* display: inline-block; */
 }

@@ -11,6 +11,8 @@ class Home extends Component {
             <div>
             <div>
                 <h4 className="text">Welcome to the Flight Buddy Homepage</h4>
+                <h4 className="text">Please Use Search to See Metrics</h4>
+                
             </div>
             <div>
                 <img className="plane" alt="" src="./images/plane.jpg" />

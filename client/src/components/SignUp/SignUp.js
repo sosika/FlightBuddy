@@ -56,8 +56,9 @@ class SignupForm extends Component {
         <div>
     <form>
         <div className="form-group">
+            <h6>Please Sign-Up:</h6>
             <label htmlFor="SignIn">
-                <strong>Create An Account:</strong>
+                <strong>Create An Account</strong>
             </label>
             <label htmlFor="username">
                 <strong></strong>
@@ -73,7 +74,7 @@ class SignupForm extends Component {
                 required
             />
             <label htmlFor="password">
-                <strong>Password: </strong>
+                <strong>Password </strong>
             </label>
             <input
                 className="form-control"
@@ -90,7 +91,6 @@ class SignupForm extends Component {
                     className="btn btn-lg btn-primary grey"
                     onClick={this.handleSubmit}
                     type="submit"
-                // redirectTo={view}
                 >
                     Sign-Up
                 </button>

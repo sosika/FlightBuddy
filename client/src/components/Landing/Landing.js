@@ -8,7 +8,7 @@ class Landing extends Component {
             height: 325,
             width: 375,
             zIndex: 10,
-            marginLeft: 275
+            marginLeft: 285
         }
         return (
             <div>

@@ -12,7 +12,7 @@ const Form = props => (
         className="form-control"
         id="tail"
         type="text"
-        placeholder="Type a tail-number to search:"
+        placeholder="Type a tail-number to search metrics:"
         // value={{}}
         name="plane"
         onChange={props.handleInputChange}
@@ -22,7 +22,7 @@ const Form = props => (
       <button
         onClick={props.handleFormSubmit}
         type="submit"
-        className="btn btn-lg btn-primary"
+        className="btn btn-lg btn-primary grey"
         // redirectTo={view}
       >
         Submit

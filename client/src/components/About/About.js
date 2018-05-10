@@ -1,5 +1,7 @@
 import React from "react";
 import "./About.css"
+// import { Col, Row, Icon } from 'react-materialize'
+
 
 class About extends React.Component {
     render() {
@@ -12,8 +14,8 @@ class About extends React.Component {
             
         }
         const imageTwo = {
-            height: 190,
-            width: 160,
+            height: 225,
+            width: 200,
             "marginLeft": 105,
             "marginBottom": 20
 
@@ -27,17 +29,15 @@ class About extends React.Component {
 
     return(
     <div>
-        {/* <div className="green">
-            <p>This is the about page</p>
-        </div> */}
+
         <h5>About the Devs</h5>
             <div className="profiles" style={profiles}>
-            <p>Marshmallow ice cream chupa chups toffee pastry pudding. Macaroon dessert sugar plum icing bonbon. Dessert cookie muffin chocolate liquorice dragée powder danish bear claw. Tootsie roll dragée jelly-o gingerbread. Topping wafer lemon drops tart gummi bears pie sugar plum icing sesame snaps. Candy chocolate cake sugar plum. Cotton candy ice cream cheesecake cupcake donut topping danish jelly-o. Caramels tart lemon drops. Cotton candy macaroon gingerbread sweet fruitcake carrot cake muffin. Lemon drops biscuit cheesecake chocolate bar. Danish tiramisu cake gingerbread donut. Donut sweet roll sugar plum muffin cake topping gummi bears carrot cake cookie.</p>
+                <p>Saijai has been working in Network Operations for more than 10 years. She has been instrumental in automation and the creation of tools for proactive monitoring and reporting. With zero tolerance toward manual work, her passion in web development has come from the fact that there is no tool that can enable teams to be proactive and take the guesswork out of the equation. Her main goal is to be able to answer questions before a customer is even aware of them, and drive towards operational excellence. Saijai received her Master of Science in Interdisciplinary Telecommunications from the University of Colorado at Boulder. She enjoys 300 days of sunshine with her family in Boulder, Colorado.</p>
             <img style={imageStyle} className="" alt="" src="./images/Saijai.jpg" />
-        
+         
         </div> 
         <div className="profiles" style={profiles}>
-        <p>Marshmallow ice cream chupa chups toffee pastry pudding. Macaroon dessert sugar plum icing bonbon. Dessert cookie muffin chocolate liquorice dragée powder danish bear claw. Tootsie roll dragée jelly-o gingerbread. Topping wafer lemon drops tart gummi bears pie sugar plum icing sesame snaps. Candy chocolate cake sugar plum. Cotton candy ice cream cheesecake cupcake donut topping danish jelly-o. Caramels tart lemon drops. Cotton candy macaroon gingerbread sweet fruitcake carrot cake muffin. Lemon drops biscuit cheesecake chocolate bar. Danish tiramisu cake gingerbread donut. Donut sweet roll sugar plum muffin cake topping gummi bears carrot cake cookie.</p>
+                <p>Maria has a varied background working in international business. She thrives in challenging and diverse settings having achieved goals working with clients from Fortune Global 500 through to NGO's and entrepreneurs. She has worked with multicultural teams on five continents, studied in eight countries, and has traveled extensively on six continents. Her interest in technology & web-development sparked while working on a geospatial project tracking orangutans in Borneo. She is eager to grow her coding skills and contribute to innovative projects. Her passions include sustainability, foreign languages, technology, travel, and connecting people. She holds a Master of International Business and a Master in Environmental Management. You can find her enjoying various outdoor pursuits in the mountains. She loves being based in Golden, CO. </p>
         <img style={imageTwo} className="" alt="" src="./images/maria.jpg" />
         </div>   
     </div>
