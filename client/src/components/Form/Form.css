@@ -1,3 +1,7 @@
-/* .pull-right {
-    float: left;
-} */
+strong {
+    font-size: 28px;
+}
+
+input{
+    font-size: 24px;
+}

@@ -1,5 +1,8 @@
 import React, {Component} from "react";
 import { Line, Bar, Radar } from "react-chartjs-2";
+import { Row, Col } from 'react-materialize'
+import "./LogsView.css"
+
 
 // Chart component
 class Chart extends Component {
@@ -29,6 +32,8 @@ class Chart extends Component {
 
   render(){
       return(
+        <Row>
+        <Col m={10} offset="m1">
         <div className="chart">
           <Line
             data={this.props.chartData1}
@@ -155,6 +160,8 @@ class Chart extends Component {
           
 
       </div>
+      </Col>
+      </Row>
 
       )
     }

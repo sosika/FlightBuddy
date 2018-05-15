@@ -3,6 +3,7 @@ import React from "react";
 
 const Nav = () => (
     <div>
+        
         {/* <nav>
             <div className="nav-wrapper grey">
                 <a href="" className="brand-logo right">Flight Buddy Logo</a>
