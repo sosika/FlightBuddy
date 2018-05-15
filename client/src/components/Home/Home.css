@@ -1,14 +1,14 @@
 .plane{
     /* position: absolute; */
     /* height: 100vh; */
-    height: 600px;
+    height: 1200px;
     width: 100vw;
-    z-index: -100;
+    /* z-index: -100; */
 }
 
 h4{
-    color: black;
-    text-align: center;
+    /* color: black;
+    text-align: center; */
     /* z-index: 10; */
     /* position: relative; */
 }

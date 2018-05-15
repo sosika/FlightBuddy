@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import './App.css';
 import axios from 'axios'
 import { BrowserRouter as Router, Switch, Route, withRouter } from "react-router-dom";
-// import Nav from './components/Nav';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Tail from "./containers/tail";
 // import TailView from "./components/TailView/tailview";
@@ -63,20 +63,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
-        <div className="content">
+      <div className="">
+        {/* <div className="content"> */}
           <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-          {/* Welcome to Flight Buddy: */}
-          {this.state.loggedIn &&
-            <p className="welcomeUser"> Welcome back: {this.state.username}!</p> 
-          }
-          
-          {/* {!this.state.loggedIn &&
-            <p>Thanks for using Flight Buddy Login again soon!</p>
-
-          } */}
-          {/* <div className="background-image"> */}
-          {/* Routes to different components */}
+          {/* {this.state.loggedIn &&
+            <p className="welcomeUser"> Welcome back: {this.state.username}!</p>
+          }  */}
           <Route exact path="/loggedOut" component={Logout} />
           <Route exact path="/flights" component={Tail} />
           <Route exact path="/about" component={About} />
@@ -104,7 +96,7 @@ class App extends Component {
           />
         {/* </div> */}
         {/* closes background image above */}
-        </div>
+        {/* </div> */}
         <div className="footer">
           <Footer />
         </div>

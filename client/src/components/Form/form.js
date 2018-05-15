@@ -1,9 +1,12 @@
 import React from "react";
+import { Row, Col } from 'react-materialize'
 import "./Form.css"
 
 const Form = props => (
   // form action should go to charts/graphs page
-  <form action="/whatever/page">
+  <Row>
+    <Col m={6} offset="m1">
+  <form action="">
     <div className="form-group">
       <label htmlFor="Tail">
         <strong>Aircraft Tail-Number</strong>
@@ -30,6 +33,8 @@ const Form = props => (
     </div>
     </div>
   </form>
+  </Col>
+  </Row>
 );
 
 export default Form;

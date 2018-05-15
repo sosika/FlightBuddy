@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom'
 import { Route, Link } from 'react-router-dom'
 import { NavItem } from 'react-materialize'
 import "./Navbar.css"
-// import logo from "./images/logo.png"
 // import '../App.css';
 import axios from 'axios'
 

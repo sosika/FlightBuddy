@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import { Row, Col } from 'react-materialize'
+
 import "./Login.css"
 
 class LoginForm extends Component {
@@ -56,7 +58,11 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
+                
+                <Row>
+                <Col l={6} m={6} s={4} offset="l1 m1">
                 <div className="form-group">
+                    
                     <form className="form-horizontal">
                         <div className="form-group">
                     <h6>Please Login to FlightBuddy:</h6>
@@ -98,6 +104,8 @@ class LoginForm extends Component {
                         </div>
                     </form>
                 </div>
+                </Col>
+                </Row>
             )
         }
     }

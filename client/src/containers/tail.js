@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Form from "../components/Form/Form";
+import Form from "../components/Form/form";
 import API from "../API.js";
 import LogsView from "../components/LogsView/LogsView";
 import Summary from '../components/Summary/Summary';

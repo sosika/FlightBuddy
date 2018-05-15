@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import 'moment-precise-range-plugin';
-import { Col } from 'react-materialize'
+import { Row, Col } from 'react-materialize'
 
 import "./Summary.css"
 
@@ -11,8 +11,9 @@ const Summary = ({ devices, totalUsage, avgDrc, avgRtt, startTime, endTime }) =>
   var diff = moment.preciseDiff(m1, m2);
   
   return (
-    <row className="parent">
-      <Col>
+    // <row className="parent">
+    <Row>
+      <Col m={10} offset="m1">
     <ul className="summary">Flight Metrics Summary: 
     <br />
     <br />
@@ -25,7 +26,7 @@ const Summary = ({ devices, totalUsage, avgDrc, avgRtt, startTime, endTime }) =>
       <li className="item">Average ping time: {avgRtt.toFixed(2)}ms</li>
     </ul>
     </Col>
-    </row>
+    </Row>
   )
 }
 
